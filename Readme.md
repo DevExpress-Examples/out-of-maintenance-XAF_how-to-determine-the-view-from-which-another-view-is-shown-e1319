@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindowController.cs](./CS/WinWebSolution.Module/MainWindowController.cs) (VB: [MainWindowController.vb](./VB/WinWebSolution.Module/MainWindowController.vb))
+<!-- default file list end -->
 # How to determine the View, from which another view is shown
 
 
