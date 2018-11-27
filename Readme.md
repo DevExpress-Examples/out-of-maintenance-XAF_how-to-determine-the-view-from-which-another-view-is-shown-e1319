@@ -24,17 +24,17 @@ namespace WinWebSolution.Module {
             Application.ViewShown += new EventHandler<ViewShownEventArgs>(Application_ViewShown);
         }
         void Application_ViewShowing(object sender, ViewShowingEventArgs e) {
-            if (e.SourceFrame != null && e.SourceFrame.View != null && e.SourceFrame.View.Id == "Party_PhoneNumbers_ListView") {
-                Frame phoneNumberFrame = e.TargetFrame;
-                DetailView phoneNumberDetailView = (DetailView)e.View;
+            if(e.SourceFrame != null && e.SourceFrame.View != null && e.SourceFrame.View.Id == "Party_PhoneNumbers_ListView") {
+                DetailView targetView = (DetailView)e.View;
+                ListView sourceView = (ListView)e.SourceFrame.View;
                 //...
             }
         }
         //OR
         void Application_ViewShown(object sender, ViewShownEventArgs e) {
-            if (e.SourceFrame != null && e.SourceFrame.View != null && e.SourceFrame.View.Id == "Party_PhoneNumbers_ListView") {
-                Frame phoneNumberFrame = e.SourceFrame;
-                DetailView phoneNumberDetailView = (DetailView)phoneNumberFrame.View;
+            if(e.SourceFrame != null && e.SourceFrame.View != null && e.SourceFrame.View.Id == "Party_PhoneNumbers_ListView") {
+                DetailView targetView = (DetailView)e.TargetFrame.View;
+                ListView sourceView = (ListView)e.SourceFrame.View;
                 //...
             }
         }
@@ -51,8 +51,6 @@ namespace WinWebSolution.Module {
 
 
 ```vb
-Imports Microsoft.VisualBasic
-Imports System
 Imports DevExpress.ExpressApp
 
 Namespace WinWebSolution.Module
@@ -68,16 +66,16 @@ Namespace WinWebSolution.Module
         End Sub
         Private Sub Application_ViewShowing(ByVal sender As Object, ByVal e As ViewShowingEventArgs)
             If e.SourceFrame IsNot Nothing AndAlso e.SourceFrame.View IsNot Nothing AndAlso e.SourceFrame.View.Id = "Party_PhoneNumbers_ListView" Then
-                Dim phoneNumberFrame As Frame = e.TargetFrame
-                Dim phoneNumberDetailView As DetailView = CType(e.View, DetailView)
+                Dim targetView As DetailView = CType(e.View, DetailView)
+                Dim sourceView As ListView = CType(e.SourceFrame.View, ListView)
                 '...
             End If
         End Sub
         'OR
         Private Sub Application_ViewShown(ByVal sender As Object, ByVal e As ViewShownEventArgs)
             If e.SourceFrame IsNot Nothing AndAlso e.SourceFrame.View IsNot Nothing AndAlso e.SourceFrame.View.Id = "Party_PhoneNumbers_ListView" Then
-                Dim phoneNumberFrame As Frame = e.SourceFrame
-                Dim phoneNumberDetailView As DetailView = CType(phoneNumberFrame.View, DetailView)
+                Dim targetView As DetailView = CType(e.TargetFrame.View, DetailView)
+                Dim sourceView As ListView = CType(e.SourceFrame.View, ListView)
                 '...
             End If
         End Sub
