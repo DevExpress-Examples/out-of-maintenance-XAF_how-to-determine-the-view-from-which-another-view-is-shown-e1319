@@ -24,12 +24,6 @@ public partial class ErrorPage : System.Web.UI.Page {
 			WebApplication.Instance.InitializeCulture();
 	}
 	private void Page_Load(object sender, System.EventArgs e) {
-		TestScriptsManager testScriptsManager = new TestScriptsManager(Page);
-		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "FormCaption", TestControlType.Field, "FormCaption");
-		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "RequestUrl", TestControlType.Field, "RequestUrl");
-		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "DescriptionTextBox", TestControlType.Field, "Description");
-		testScriptsManager.RegisterControl(JSDefaultTestControl.ClassName, "ReportButton", TestControlType.Action, "Report");
-		testScriptsManager.AllControlRegistered("");
         if(WebApplication.Instance != null) {
             ApplicationTitle.Text = WebApplication.Instance.Title;
         }
