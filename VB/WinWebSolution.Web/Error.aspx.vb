@@ -27,16 +27,10 @@ Partial Public Class ErrorPage
 		End If
 	End Sub
 	Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
-		Dim testScriptsManager As New TestScriptsManager(Page)
-		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "FormCaption", TestControlType.Field, "FormCaption")
-		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "RequestUrl", TestControlType.Field, "RequestUrl")
-		testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "DescriptionTextBox", TestControlType.Field, "Description")
-		testScriptsManager.RegisterControl(JSDefaultTestControl.ClassName, "ReportButton", TestControlType.Action, "Report")
-		testScriptsManager.AllControlRegistered("")
-		If WebApplication.Instance IsNot Nothing Then
-			ApplicationTitle.Text = WebApplication.Instance.Title
-		Else
-			ApplicationTitle.Text = "No application"
+        If WebApplication.Instance IsNot Nothing Then
+            ApplicationTitle.Text = WebApplication.Instance.Title
+        Else
+            ApplicationTitle.Text = "No application"
 		End If
 		Header.Title = "Application Error - " & ApplicationTitle.Text
 
