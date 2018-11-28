@@ -10,6 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace></RootNamespace>
     <AssemblyName>WinWebSolution.Web</AssemblyName>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
